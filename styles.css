@@ -525,3 +525,23 @@ a{color:inherit}
 /* los proyectos que faltan van como texto, no como recuadros vacios */
 .soon-list{margin:44px 0 0;font-size:15px;color:var(--grey);
   padding-top:22px;border-top:1px solid var(--line)}
+
+  /* Tira de logos: blindaje */
+.marquee{overflow:hidden}
+.marquee-track{display:flex;flex-wrap:nowrap;width:max-content;align-items:center}
+.marquee img{flex:0 0 auto;max-width:none}
+
+@media (prefers-reduced-motion:reduce){
+  .marquee{overflow:visible}
+  .marquee-track{
+    flex-wrap:wrap;
+    justify-content:center;
+    width:auto;
+    max-width:1080px;
+    margin:0 auto;
+    row-gap:28px;
+    animation:none!important;
+    transform:none!important;
+  }
+  .marquee img[aria-hidden="true"]{display:none}
+}
